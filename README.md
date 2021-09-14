@@ -1,6 +1,5 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 🚀 NextJS, FirebaseAuth & Tailwindcss with Typescript
 
 📝 Written with TypeScript
@@ -12,6 +11,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 🦚 with Tailwindcss layout
 
 First, run the development server:
+
+
+## Getting Started
 
 ```bash
 npm run dev
