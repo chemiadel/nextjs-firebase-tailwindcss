@@ -10,10 +10,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 🦚 with Tailwindcss layout
 
-First, run the development server:
-
-
 ## Getting Started
+
+First, run the development server:
 
 ```bash
 npm run dev
