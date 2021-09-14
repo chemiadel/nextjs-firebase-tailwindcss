@@ -23,6 +23,6 @@ Get WEB SDK config on Console > Project settings > General.
 Replace your config here: **./lib/firebase/init.ts**
 
 Get WEB SDK config on Console > Project settings > Service accounts.
-Replace your config here: **./lib/firebase/init-admin.ts**
+Replace your config json file here: **./helps/serviceAccount.json**
 
 Enjoy! 🤘
