@@ -1,4 +1,4 @@
-import nookies, { setCookie, destroyCookie} from 'nookies'
+import nookies from 'nookies'
 import adminInit from './init-admin'
 
 export const authServer =async (ctx : any) => {

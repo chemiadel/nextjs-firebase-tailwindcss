@@ -1,11 +1,8 @@
 import { useAuth,signOut } from '../../lib/firebase/useAuthContext'
-import { getAuth } from "firebase/auth";
 import Link from 'next/link'
 
 export default function Header(props : any){
     const { authUser, loading} = useAuth()
-    
-    const auth = getAuth()
 
     return <div className="flex h-full flex-row">
 
@@ -30,7 +27,7 @@ export default function Header(props : any){
 
         <Link href='/private'><button > Private</button></Link>
 
-        <button onClick={()=>signOut(auth)}> Signout</button>
+        <button onClick={signOut}> Signout</button>
         
         </>:null}
 

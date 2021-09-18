@@ -5,10 +5,9 @@ import { initializeApp, getApps } from 'firebase/app';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-export default function initFirebase(){
+function initFirebase(){
   const firebaseConfig = {
-    //your public config
-  };
+  }
   
   // Initialize Firebase
   const apps=getApps()
@@ -18,3 +17,4 @@ export default function initFirebase(){
   
 }
 
+initFirebase()

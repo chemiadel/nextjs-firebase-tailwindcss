@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 📝 Written with TypeScript
 
-🔒 Client-side authentication sample
+🔒 Client-side authentication sample with Credentials/Google Signin
 
 🔒 Server-side authentication with cookies sample
 
