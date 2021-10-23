@@ -22,10 +22,31 @@ yarn dev
 
 ## Firebase Config
 
-Get WEB SDK config on Console > Project settings > General.
-Replace your config here: **./lib/firebase/init.ts**
+Firebase config: Console > Project settings > General.
+Firebase-Admin config: Console > Project settings > Service accounts.
 
-Get WEB SDK config on Console > Project settings > Service accounts.
-Replace your config json file here: **./helpers/serviceAccount.json**
+Update `.env.local`
+
+```bash
+#Firebase-admin
+type=
+project_id=
+private_key_id=
+private_key=
+client_email=
+client_id=
+auth_uri=
+token_uri=
+auth_provider_x509_cert_url=
+client_x509_cert_url=
+
+#firebase
+NEXT_PUBLIC_apiKey=
+NEXT_PUBLIC_authDomain=
+NEXT_PUBLIC_projectId=
+NEXT_PUBLIC_storageBucket=
+NEXT_PUBLIC_messagingSenderId=
+NEXT_PUBLIC_appId=
+```
 
 Enjoy! 🤘
