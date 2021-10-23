@@ -1,4 +1,4 @@
-import { useAuth,signOut } from '../../lib/firebase/useAuthContext'
+import { useAuth,signOut } from '../../lib/useAuthContext'
 import Link from 'next/link'
 
 export default function Header(props : any){

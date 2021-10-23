@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useAuth } from '../lib/firebase/useAuthContext'
+import { useAuth } from '../lib/useAuthContext'
 
 const Home: NextPage = () => {
   const { authUser, loading} = useAuth()

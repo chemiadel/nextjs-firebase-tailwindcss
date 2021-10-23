@@ -27,7 +27,10 @@ export default function  AuthContextProvider({children} : Props) {
         if (user) {
             setAuthUser(user)
             // Set
-            user.getIdToken().then(( token : string )=> setCookie(null, 'idToken', token))
+            user.getIdToken().then(( token : string )=> setCookie(null, 'idToken', token, {
+              maxAge: 30 * 24 * 60 * 60,
+              path: '/',
+            }))
         
         }
         if (!user) setAuthUser(null)

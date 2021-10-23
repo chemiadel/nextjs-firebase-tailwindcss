@@ -1,6 +1,6 @@
 import type { NextPage, GetServerSideProps } from 'next'
 import Head from 'next/head'
-import { authServer } from '../lib/firebase/useAuthServer'
+import { authServer } from '../lib/session'
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const user=await authServer(ctx)

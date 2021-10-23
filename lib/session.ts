@@ -1,5 +1,5 @@
 import nookies from 'nookies'
-import adminInit from './init-admin'
+import adminInit from './firebaseConfig/init-admin'
 
 export const authServer =async (ctx : any) => {
     const {idToken} = nookies.get(ctx)

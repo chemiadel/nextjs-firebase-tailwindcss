@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider , signInWithPopup } from "firebase/auth";
 import {useState} from 'react'
-import { useAuth } from '../lib/firebase/useAuthContext'
+import { useAuth } from '../lib/useAuthContext'
 
 const Home: NextPage = () => {
   const [ email , setEmail ] =  useState<string>('')
