@@ -26,7 +26,7 @@ Firebase config: Console > Project settings > General.
 
 Firebase-Admin config: Console > Project settings > Service accounts.
 
-Update `.env.local`
+Update `.env`
 
 ```bash
 #Firebase-admin
