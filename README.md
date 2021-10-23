@@ -23,6 +23,7 @@ yarn dev
 ## Firebase Config
 
 Firebase config: Console > Project settings > General.
+
 Firebase-Admin config: Console > Project settings > Service accounts.
 
 Update `.env.local`
