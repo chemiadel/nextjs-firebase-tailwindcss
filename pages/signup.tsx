@@ -2,16 +2,16 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider , signInWithPopup } from "firebase/auth";
 import {useState} from 'react'
-import { useAuth } from '../lib/useAuthContext'
+import { useAuth } from '../lib/authContext'
 
 const Home: NextPage = () => {
-  const { authUser, loading} = useAuth()
+  const { user , loading} = useAuth()
   const [ email , setEmail ] =  useState<string>('')
   const [ password , setPassword ] =  useState<string>('')
 
   if(loading) return null
 
-  if(authUser) return <h1>U already logged</h1>
+  if(user) return <h1>U already logged</h1>
 
 
   const auth = getAuth()

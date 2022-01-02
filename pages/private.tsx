@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useAuth } from '../lib/useAuthContext'
+import { useAuth } from '../lib/authContext'
 
 const Home: NextPage = () => {
   const { authUser, loading} = useAuth()
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-      <h1>Email : {authUser?.email}</h1>
+      <h1>Email : {authUser?.claims.email}</h1>
       Private
       </main>
     </>
