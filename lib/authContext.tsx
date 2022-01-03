@@ -23,7 +23,7 @@ type UserContext ={
   loading: boolean
 }
 
-const authUserContext = createContext<UserContext>({
+const authContext = createContext<UserContext>({
   user: null,
     loading: true
 });
@@ -55,11 +55,11 @@ export default function  AuthContextProvider({children} : Props) {
 
   },[])
 
-  return <authUserContext.Provider value={{user,loading}}>{children}</authUserContext.Provider>;
+  return <authContext.Provider value={{user,loading}}>{children}</authContext.Provider>;
 
 }
 
-export const useAuth = () => useContext(authUserContext);
+export const useAuth = () => useContext(authContext);
 
 export const signOut = async () => {
   const auth=getAuth()
