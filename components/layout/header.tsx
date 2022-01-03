@@ -2,7 +2,7 @@ import { useAuth,signOut } from '../../lib/authContext'
 import Link from 'next/link'
 
 export default function Header(props : any){
-    const { authUser, loading} = useAuth()
+    const { user, loading} = useAuth()
 
     return <div className="flex h-full flex-row">
 
@@ -14,14 +14,14 @@ export default function Header(props : any){
 
         <div className="m-auto space-x-2">
 
-        {!authUser && !loading? 
+        {!user && !loading? 
         <>
         <Link href='/signup'><button className="m-auto"> Signup</button></Link>
 
         <Link href='/signin'><button className="m-auto"> Signin</button></Link>
         </>
         :null}
-        {authUser?<>
+        {user?<>
         
         <Link href='/privatessr'><button > PrivateSSR</button></Link>
 
