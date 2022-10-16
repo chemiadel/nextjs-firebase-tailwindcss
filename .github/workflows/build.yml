@@ -13,7 +13,7 @@ jobs:
           node-version: 16
           cache: yarn
 
-      - run: yarn install --frozen-lockfile
+      - run: yarn install
       - name: build
         #        TODO Enable those lines below if you use a Redis cache, you'll also need to configure GitHub Repository Secrets
         #        env:
