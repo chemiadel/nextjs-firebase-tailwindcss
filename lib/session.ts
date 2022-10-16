@@ -1,14 +1,13 @@
-import nookies from 'nookies'
-import { GetServerSidePropsContext, NextApiHandler } from 'next'
-import adminInit from './firebaseConfig/init-admin'
+import nookies from "nookies";
+import { GetServerSidePropsContext, NextApiHandler } from "next";
+import adminInit from "./firebaseConfig/init-admin";
 
-export const authServer = async (ctx : GetServerSidePropsContext)=> {
+export const authServer = async (ctx: GetServerSidePropsContext) => {
+  const { idToken } = nookies.get(ctx);
 
-    const { idToken } = nookies.get(ctx)
-
-    try{
-      return adminInit.auth().verifyIdToken(idToken)
-    } catch(err) {
-      return null
-    }
-} 
+  try {
+    return adminInit.auth().verifyIdToken(idToken);
+  } catch (err) {
+    return null;
+  }
+};

@@ -1,7 +1,3 @@
-
-export default function Footer(props : any){
-
-    return <div>
-        footer
-    </div>
+export default function Footer(props: any) {
+  return <div>footer</div>;
 }
