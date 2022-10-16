@@ -1,13 +1,19 @@
 {
   "name": "nextjs-firebase-tailwindcss",
-  "version": "1.1.0",
+  "version": "12.3.1",
+  "author": {
+    "name": "Adel Chemi",
+    "email": "adelchemi6@gmail.com",
+    "url": "https://github.com/chemiadel"
+  },
   "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier -w"
+    "prettier": "prettier -w",
+    "prepare": "husky install"
   },
   "dependencies": {
     "firebase": "^9.12.1",
@@ -21,8 +27,12 @@
     "@types/react": "17.0.20",
     "autoprefixer": "^10.3.4",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-import": "^0.13.0",
+    "eslint-config-next": "^12.3.1",
     "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "postcss": "^8.3.6",
     "prettier": "^2.7.1",
     "tailwindcss": "^2.2.15",
