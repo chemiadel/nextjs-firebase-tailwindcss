@@ -1,14 +1,94 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { format } from "date-fns";
+import { database } from "../lib/firebaseConfig";
 
 export default function Dashboard() {
 	const [selectedMonthDays, setSelectedMonthDays] = useState([]);
 	const [currentMonth, setCurrentMonth] = useState(getCurrentMonth() || "");
-	const [allMonthIncome, setAllMonthIncome] = useState("");
-	const [allMonthExpenses, setAllMonthExpenses] = useState("");
-	const [totalEl7agExpenses, setTotalEl7agExpenses] = useState("");
-	const [totalBassemExpenses, setTotalBassemExpenses] = useState("");
-	const [totalMonthIncome, setTotalMonthIncome] = useState("");
-	const [totalMonthExpenses, setTotalMonthExpenses] = useState("");
+	const [allMonthIncome, setAllMonthIncome] = useState<number>(0);
+	const [allMonthExpenses, setAllMonthExpenses] = useState<number>(0);
+	const [totalEl7agExpenses, setTotalEl7agExpenses] = useState<number>(0);
+	const [totalBassemExpenses, setTotalBassemExpenses] = useState<number>(0);
+	const [totalMonthIncome, setTotalMonthIncome] = useState<number>(0);
+	const [totalMonthExpenses, setTotalMonthExpenses] = useState<number>(0);
+
+	const [currentFetchingMonth, setCurrentFetchingMonth] = useState(
+		format(new Date(), "MM-yyyy")
+	);
+	const dbInstance = collection(database, `${currentFetchingMonth}`);
+	useEffect(() => {
+		(async function () {
+			await getDocs(dbInstance).then((data) => {
+				const monthData: any = data.docs.map((item) => {
+					return { ...item.data(), id: item.id };
+				});
+				setSelectedMonthDays(monthData);
+			});
+		})();
+	}, [dbInstance]);
+
+	useEffect(() => {
+		monthMethods.totalMonthIncome();
+		monthMethods.allMonthExpenses();
+		monthMethods.allMonthIncome();
+		monthMethods.totalEl7agExpenses();
+		monthMethods.totalBassemExpenses();
+		monthMethods.totalMonthExpenses();
+	}, [selectedMonthDays]);
+
+	const monthMethods = {
+		allMonthExpenses() {
+			const sum = selectedMonthDays.reduce(
+				(acc, eachDay: any) => acc + parseInt(eachDay.expenses),
+				0
+			);
+			setAllMonthExpenses(sum);
+			return sum;
+		},
+		allMonthIncome() {
+			const sum = selectedMonthDays.reduce(
+				(acc, eachDay: any) => acc + parseInt(eachDay.income),
+				0
+			);
+			setAllMonthIncome(sum);
+			return sum;
+		},
+		totalEl7agExpenses() {
+			const sum = selectedMonthDays.reduce(
+				(acc, eachDay: any) => acc + parseInt(eachDay.expensesEl7ag),
+				0
+			);
+			setTotalEl7agExpenses(sum);
+			return sum;
+		},
+		totalBassemExpenses() {
+			const sum = selectedMonthDays.reduce(
+				(acc, eachDay: any) => acc + parseInt(eachDay.expensesBassem),
+				0
+			);
+			setTotalBassemExpenses(sum);
+			return sum;
+		},
+		totalMonthIncome() {
+			const sum = selectedMonthDays.reduce(
+				(acc, eachDay: any) => acc + parseInt(eachDay.total_day_income),
+				0
+			);
+			setTotalMonthIncome(sum);
+			return sum;
+		},
+		totalMonthExpenses() {
+			const sum = selectedMonthDays.reduce(
+				(acc, eachDay: any) =>
+					acc + parseInt(eachDay.total_day_expenses),
+				0
+			);
+			setTotalMonthExpenses(sum);
+			return sum;
+		}
+	};
 
 	return (
 		<div>

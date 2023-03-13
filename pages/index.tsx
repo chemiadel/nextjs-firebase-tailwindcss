@@ -47,6 +47,11 @@ const Home: NextPage = () => {
 		format(new Date(), "MM-yyyy")
 	);
 	function submitDayData(data: any) {
+		data.expenses = data.expenses ? data.expenses : 0;
+		data.income = data.income ? data.income : 0;
+		data.expensesEl7ag = data.expensesEl7ag ? data.expensesEl7ag : 0;
+		data.expensesBassem = data.expensesBassem ? data.expensesBassem : 0;
+
 		setDoc(doc(database, currentFetchingMonth, data.date), {
 			...data,
 			created_at: new Date(),
