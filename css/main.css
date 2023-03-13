@@ -1,0 +1,134 @@
+
+/* // ========================================= classses ========================================= */
+.pageContainer {
+  min-height: 100vh;
+}
+.pointer {
+  cursor: pointer;
+}
+.errorMsg {
+  font-size: 0.8rem;
+  color: red;
+  position: absolute;
+  z-index: 9999;
+  bottom: -20px;
+  left: 10px;
+}
+.sectionsSeperaterSpace {
+  margin-top: 3.5rem;
+}
+.fullWidth {
+  width: 100%;
+}
+.btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.list-unstyled {
+  list-style: none;
+}
+.text-center {
+  text-align: center;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+.noWrapText {
+  white-space: nowrap;
+}
+
+.circleRadius {
+  border-radius: 100%;
+  overflow: hidden;
+}
+.upperCase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.lowerCase {
+  text-transform: lowercase;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* // ========================================= classses ========================================= */
+@media screen and (max-width: 767px) {
+  .sm-hidden {
+    display: none !important;
+  }
+  .sm-show {
+    display: block !important;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .sm-hidden {
+    display: block !important;
+  }
+  .sm-show {
+    display: none !important;
+  }
+}
+
+/* // normalize */
+* {
+  box-sizing: border-box;
+  direction: rtl;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Lato, Sans-serif;
+  color: black;
+}
+/* // to hide input number arrows */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}

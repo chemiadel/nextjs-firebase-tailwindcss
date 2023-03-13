@@ -16,12 +16,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "date-fns": "^2.29.3",
     "firebase": "^9.12.1",
     "firebase-admin": "^9.11.1",
     "next": "^12.3.1",
     "nookies": "^2.5.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.43.5"
   },
   "devDependencies": {
     "@types/react": "17.0.20",
