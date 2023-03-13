@@ -23,7 +23,8 @@
     "nookies": "^2.5.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-hook-form": "^7.43.5"
+    "react-hook-form": "^7.43.5",
+    "sass": "^1.59.2"
   },
   "devDependencies": {
     "@types/react": "17.0.20",

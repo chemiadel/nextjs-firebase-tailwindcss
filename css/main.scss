@@ -1,0 +1,140 @@
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+.dashboard-container {
+	// background-color: black;
+	.dashboard-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		button {
+			background: transparent;
+			border: 1px solid #eee;
+			color: #eee;
+			padding: 10px 30px;
+			cursor: pointer;
+			border-radius: 2px;
+			&:hover {
+				background: black;
+				color: white;
+			}
+		}
+	}
+	.applications-table {
+		width: 100%;
+		padding-bottom: 50px;
+		min-width: 900px;
+		overflow-x: auto;
+
+		#table {
+			width: 100%;
+			min-width: 900px;
+			box-shadow: 1px 1px 10px 5px rgb(190, 190, 190);
+			border-collapse: collapse;
+			border-spacing: 0;
+
+			th {
+				text-transform: uppercase;
+				text-align: center;
+				background: #595999;
+				white-space: nowrap;
+				color: #fff;
+				padding: 15px;
+				min-width: 30px;
+
+				&:hover {
+					background-color: #42427c;
+				}
+			}
+			td {
+				text-align: center;
+				white-space: nowrap;
+				font-weight: bolder;
+				height: 80px;
+				padding: 15px;
+				cursor: pointer;
+			}
+			tbody tr td {
+				border: 1px solid blue;
+			}
+			tbody tr:nth-child(2n) td {
+				background: #e8e8fd;
+				border: 1px solid black;
+			}
+
+			.secondHead {
+				color: white;
+				background: black;
+				td {
+					height: 10px;
+				}
+			}
+			.secondBody {
+				td {
+					border: 1px solid black;
+				}
+			}
+		}
+	}
+	.pagination {
+		font-family: "Open Sans", sans-serif;
+		text-align: right;
+		width: 100%;
+		padding: 8px;
+		.number {
+			display: inline-block;
+			padding: 4px 10px;
+			color: #fff;
+			border-radius: 4px;
+			background: black;
+			margin: 0px 5px;
+			cursor: pointer;
+		}
+		.number:hover,
+		.number.active {
+			background: #dedede;
+		}
+	}
+}
+
+.fieldSets-container {
+	display: flex;
+	fieldset {
+		width: 20% !important;
+		p {
+			font-weight: normal !important;
+			span {
+				font-weight: 700;
+			}
+		}
+	}
+	.truck-info {
+		flex: 1;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+		div {
+			width: 45%;
+		}
+	}
+}
